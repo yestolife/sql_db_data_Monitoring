@@ -44,7 +44,7 @@ mysql> alter user root@localhost identified with mysql_native_password by 'abc34
 
 ## 3. sql_exporter配置
 
-sql_exporter相关两个文件需要配置sql_exporter.yml与mysql_standard.collector.yml。[sql_exporter.yml](?)中保存了数据库链接的信息，特别注意`data_source_name: 'mysql://root:abc345@tcp(127.0.0.1:3306)/test_db'`需要与本机mysql数据库配置保持一致。[mysql_standard.collector.yml](?)中保存了读取数据库中数据的查询方式。
+sql_exporter相关两个文件需要配置sql_exporter.yml与mysql_standard.collector.yml。[sql_exporter.yml](https://github.com/yestolife/sql_db_data_Monitoring/blob/master/sql_exporter.yml)中保存了数据库链接的信息，特别注意`data_source_name: 'mysql://root:abc345@tcp(127.0.0.1:3306)/test_db'`需要与本机mysql数据库配置保持一致。[mysql_standard.collector.yml](https://github.com/yestolife/sql_db_data_Monitoring/blob/master/mysql_standard.collector.yml)中保存了读取数据库中数据的查询方式。
 
 运行sql_exporter后可以看到数据暴露于端口9399。
 
@@ -58,7 +58,7 @@ I0817 16:56:52.569647    1035 main.go:67] Listening on :9399
 
 ## 4. Prometheus配置
 
-Prometheus的配置比较简单，[prometheus.yml](?)文件中的一些参数,注意侦听的端口与sql_exporter匹配：
+Prometheus的配置比较简单，[prometheus.yml](https://github.com/yestolife/sql_db_data_Monitoring/blob/master/prometheus.yml)文件中的一些参数,注意侦听的端口与sql_exporter匹配：
 
 ```
 scrape_configs:
