@@ -1,0 +1,17 @@
+
+collector_name: mysql_standard
+
+# Similar to global.min_interval, but applies to the queries defined by this collector only.
+#min_interval: 0s
+
+metrics:
+  - metric_name: test
+    type: gauge
+    help: 'test'
+    values: [test_col]
+    query: 
+      select * from test_tab
+
+
+
+ 
